@@ -450,9 +450,9 @@ img, video {
   position: relative;
   width: 100% !important;
   height: 100% !important;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   min-height: 0;
-  max-height: 960px;
+  max-height: 980px;
   margin-top: 16px;
   border-radius: 8px;
   overflow: hidden;
