@@ -1169,23 +1169,32 @@ img, video {
 /* Mobile */
 @media (max-width: 768px) {
   .topbar {
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand freebtn"
+      "brand navtoggle"
+      "navinner navinner";
+    align-items: center;
+    row-gap: 10px;
     padding: 16px;
   }
 
-  .topbar h2 {
-    position: static;
-    transform: none;
-    width: 100%;
-    order: 3;
-    white-space: normal;
-    text-align: left;
-    margin-top: 8px;
+  .topbar .brand {
+    grid-area: brand;
+    align-self: start;
   }
 
   .top-bar-button {
+    grid-area: freebtn;
     margin-left: 0;
+    justify-self: end;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    grid-area: navtoggle;
+    justify-self: end;
   }
 
   .company-name {
@@ -1193,11 +1202,8 @@ img, video {
     align-items: flex-start;
   }
 
-  .nav-toggle {
-    display: inline-flex;
-  }
-
   .nav-inner {
+    grid-area: navinner;
     display: none;
     flex-direction: column;
     align-items: stretch;
@@ -1230,16 +1236,19 @@ img, video {
   .strip-list {
     grid-template-columns: 1fr;
   }
-}
 
-/* Small phones */
-@media (max-width: 600px) {
   .newsboard {
-    aspect-ratio: auto;
-    min-height: 60vh;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .newsboard-slide img,
+  .newsboard-slide video {
+    height: 100% !important;
   }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
   .grid-4,
   .grid-3 {
