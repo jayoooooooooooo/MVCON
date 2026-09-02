@@ -576,43 +576,71 @@
   </footer>
 
   <script>
+    /* ============================================================
+       MOBILE NAV TOGGLE
+       Kinukuha yung Menu button at yung nav-inner (link list),
+       tapos pag na-click yung button, dinadagdag/tinatanggal ang
+       "is-open" class sa nav-inner para lumabas/matago ito.
+       Ina-update din yung aria-expanded para sa accessibility
+       (para alam ng screen readers kung bukas o sarado ang menu).
+       ============================================================ */
     const toggle = document.getElementById('navToggle');
     const inner = document.getElementById('navInner');
     const navLinks = Array.from(document.querySelectorAll('.nav-link'));
     const siteFooter = document.getElementById('siteFooter');
 
+    // Kunin lahat ng section na may data-page attribute (Home, About, Projects, etc.)
     const sections = Array.from(document.querySelectorAll('main.page > section[data-page]'));
+    // Kunin lahat ng unique page IDs galing sa mga section (para malaman anong mga "pages" meron)
     const pageIds = Array.from(new Set(sections.map(s => s.dataset.page)));
 
+    // Pag pinindot ang Menu button: buksan/isara ang nav links
     toggle.addEventListener('click', () => {
       const isOpen = inner.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
+    /* ============================================================
+       SINGLE-PAGE NAVIGATION (SPA-style page switching)
+       Ito ang gumagawa ng "walang reload" na navigation sa site.
+       Sa click ng bawat nav link, itinatago lahat ng section maliban
+       sa section na tumutugma sa hash (#home, #about, #projects, #contacts).
+       Ino-update din nito kung alin ang "active" na link sa navbar,
+       at itinatago ang footer pag nasa Contacts page (kasi may sarili
+       nang contact info doon).
+       ============================================================ */
     function showPage(id, opts = {}) {
+      // Kung walang tumutugmang page sa hash, default sa unang page (Home)
       const target = pageIds.includes(id) ? id : pageIds[0];
 
+      // Ipakita lang ang section na tumutugma sa target page
       sections.forEach(section => {
         section.classList.toggle('is-active', section.dataset.page === target);
       });
 
+      // I-highlight ang kaukulang nav link bilang "active"
       navLinks.forEach(link => {
         const linkId = link.getAttribute('href').replace('#', '');
         link.classList.toggle('is-active', linkId === target);
       });
 
+      // Itago ang footer sa Contacts page dahil may sarili na itong contact section
       if (siteFooter) {
         siteFooter.style.display = target === 'contacts' ? 'none' : '';
       }
 
+      // Isara ang mobile menu tuwing may napipiling page
       inner.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
 
+      // I-scroll pabalik sa taas ng page tuwing lumipat ng page
+      // (maliban kung sinabing "skipScroll" gaya sa unang load)
       if (!opts.skipScroll) {
         window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
       }
     }
 
+    // Pag pinindot ang isang nav link: baguhin ang URL hash at ipakita yung tamang page
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -624,13 +652,21 @@
       });
     });
 
+    // Pag ginamit ang Back/Forward button ng browser, sundin din ang tamang page
     window.addEventListener('popstate', () => {
       showPage(location.hash.replace('#', ''));
     });
 
+    // Sa unang pag-load ng page, ipakita agad ang page na nasa URL hash
+    // (o Home kung wala) nang walang pag-scroll
     showPage(location.hash.replace('#', ''), { skipScroll: true });
 
-    // Services button on Home: jump to About Us page then scroll to the services content
+    /* ============================================================
+       "SERVICES" BUTTON SA HOME PAGE
+       Pag pinindot ang SERVICES button sa Home, lumilipat muna
+       sa About Us page, tapos mag-a-auto-scroll papunta sa
+       Professional Services section (yung carousel).
+       ============================================================ */
     const servicesLink = document.getElementById('servicesLink');
     if (servicesLink) {
       servicesLink.addEventListener('click', (e) => {
@@ -639,6 +675,7 @@
           history.pushState(null, '', '#about');
         }
         showPage('about');
+        // Maliit na delay para maka-render muna ang About page bago mag-scroll
         setTimeout(() => {
           const target = document.getElementById('servicesSection');
           if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -646,31 +683,49 @@
       });
     }
 
-    // Home service cards: click to reveal project name / details
+    /* ============================================================
+       HOME SERVICE CARDS (Bahay Ni Jayoo, Rence, atbp.)
+       Pag na-click ang isang service card, dinadagdag/tinatanggal
+       ang "is-open" class dito para ipakita/itago ang caption
+       at details ng project (ginagamit ito ng CSS para sa hover/reveal
+       effect).
+       ============================================================ */
     Array.from(document.querySelectorAll('.service-card')).forEach(card => {
       card.addEventListener('click', () => {
         card.classList.toggle('is-open');
       });
     });
 
-    // ---------------- News Board Slideshow (auto-advance) ----------------
+    /* ============================================================
+       NEWS BOARD SLIDESHOW (auto-advance)
+       Ito ang nagpapalipat-lipat ng mga larawan/video sa News Board
+       tuwing ilang segundo, tulad ng isang carousel/slideshow.
+       - Gumagawa ng "dots" (mga tuldok na indicator) sa ilalim,
+         isa para sa bawat slide, na pwede ring i-click para pumunta
+         diretso doon.
+       - Kung ang kasalukuyang slide ay video, hinihintay nito
+         matapos ang video bago lumipat sa susunod.
+       - Kung larawan naman, 5 segundo bago awtomatikong lumipat.
+       ============================================================ */
     (function () {
       const board = document.getElementById('newsboard');
       if (!board) return;
 
       const slides = Array.from(board.querySelectorAll('.newsboard-slide'));
       const dotsWrap = document.getElementById('newsboardDots');
-      let current = 0;
-      let timer = null;
+      let current = 0; // index ng kasalukuyang ipinapakitang slide
+      let timer = null; // reference sa setTimeout para ma-cancel kung kailangan
 
+      // Gumawa ng isang "dot" indicator para sa bawat slide
       slides.forEach((slide, i) => {
         const dot = document.createElement('span');
         dot.className = 'newsboard-dot' + (i === 0 ? ' is-active' : '');
-        dot.addEventListener('click', () => goTo(i));
+        dot.addEventListener('click', () => goTo(i)); // pindutin ang dot para pumunta doon
         dotsWrap.appendChild(dot);
       });
       const dots = Array.from(dotsWrap.querySelectorAll('.newsboard-dot'));
 
+      // I-pause ang video (kung meron) sa kasalukuyang slide bago lumipat
       function stopCurrentVideo() {
         const video = slides[current].querySelector('video');
         if (video) {
@@ -679,30 +734,38 @@
         }
       }
 
+      // Pumunta sa isang partikular na slide gamit ang index nito
       function goTo(index) {
         clearTimeout(timer);
         stopCurrentVideo();
 
+        // Ginagawang "looping" ang index (babalik sa una pag lumagpas sa dulo)
         current = (index + slides.length) % slides.length;
 
+        // I-update kung aling slide at dot ang "active"
         slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
         dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
 
         playCurrent();
       }
 
+      // Pumunta sa susunod na slide
       function next() {
         goTo(current + 1);
       }
 
+      // I-play ang kasalukuyang slide: kung video, i-play ito at maghintay
+      // matapos bago lumipat; kung larawan, mag-set ng 5-second timer
+      // bago awtomatikong lumipat sa susunod
       function playCurrent() {
         const active = slides[current];
         const video = active.querySelector('video');
 
         if (video) {
           video.currentTime = 0;
-          video.onended = next;
+          video.onended = next; // pag tapos na ang video, lumipat sa susunod
           video.play().catch(() => {
+            // Kung na-block ang autoplay ng browser, gumamit na lang ng timer
             timer = setTimeout(next, 5000);
           });
         } else {
@@ -710,10 +773,22 @@
         }
       }
 
+      // Simulan ang slideshow sa unang slide
       playCurrent();
     })();
 
-    // ---------------- Services Carousel (manual: buttons + swipe, no autoplay) ----------------
+    /* ============================================================
+       SERVICES CAROUSEL (manual lang: buttons + swipe, walang autoplay)
+       Ito yung carousel sa About Us page na nagpapakita ng
+       Construction Services, Manpower, Tools, atbp.
+       - May Prev/Next buttons.
+       - May "dots" din na pwedeng i-click para diretsong pumunta
+         sa isang slide.
+       - Suportado rin ang swipe gesture sa touch devices (mobile)
+         para makapag-swipe left/right.
+       - Hindi ito autoplay — kailangan ng user action (click o swipe)
+         bago lumipat ng slide.
+       ============================================================ */
     (function () {
       const viewport = document.getElementById('servicesViewport');
       if (!viewport) return;
@@ -722,8 +797,9 @@
       const dotsWrap = document.getElementById('servicesDots');
       const prevBtn = document.getElementById('servicesPrev');
       const nextBtn = document.getElementById('servicesNext');
-      let current = 0;
+      let current = 0; // index ng kasalukuyang slide
 
+      // Gumawa ng dot indicator para sa bawat slide
       slides.forEach((slide, i) => {
         const dot = document.createElement('span');
         dot.className = 'services-dot' + (i === 0 ? ' is-active' : '');
@@ -732,34 +808,41 @@
       });
       const dots = Array.from(dotsWrap.querySelectorAll('.services-dot'));
 
+      // Pumunta sa isang partikular na slide (may looping din)
       function goTo(index) {
         current = (index + slides.length) % slides.length;
         slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
         dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
-        viewport.scrollTop = 0;
+        viewport.scrollTop = 0; // ibalik sa taas ang scroll position ng slide (kung may mahabang content)
       }
 
+      // Prev/Next button clicks
       prevBtn.addEventListener('click', () => goTo(current - 1));
       nextBtn.addEventListener('click', () => goTo(current + 1));
 
-      // Swipe support (touch devices)
+      // ---- Swipe support (para sa touch devices / mobile) ----
       let touchStartX = 0;
       let touchStartY = 0;
 
+      // Itala ang starting position ng daliri pag nag-touch
       viewport.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
       }, { passive: true });
 
+      // Pag inalis na ang daliri, kalkulahin kung gaano kalayo/kaanong direksyon
+      // ang galaw (dx = horizontal, dy = vertical). Kung mas malaki ang horizontal
+      // na galaw kumpara sa vertical (ibig sabihin, talagang swipe left/right
+      // at hindi basta pag-scroll), lumipat ng slide papunta sa tamang direksyon.
       viewport.addEventListener('touchend', (e) => {
         const dx = e.changedTouches[0].clientX - touchStartX;
         const dy = e.changedTouches[0].clientY - touchStartY;
 
         if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
           if (dx < 0) {
-            goTo(current + 1);
+            goTo(current + 1); // swipe left → susunod na slide
           } else {
-            goTo(current - 1);
+            goTo(current - 1); // swipe right → nakaraang slide
           }
         }
       }, { passive: true });
