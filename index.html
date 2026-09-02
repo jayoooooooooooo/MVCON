@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MVCON Builders & Development Corp.</title>
+  <link rel="shortcut icon" href="logo.png" type="icon">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo.png" alt="LOGO" class="logo">
+    </div>
+    <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="navInner">
+      <span class="bar" aria-hidden="true"></span>
+      Menu
+    </button>
+    <div class="nav-inner" id="navInner">
+      <a class="nav-link" href="#home">HOME</a>
+      <a class="nav-link" href="#about">ABOUT US</a>
+      <a class="nav-link" href="#projects">PROJECTS</a>
+      <a class="nav-link" href="#contacts">CONTACTS</a>
+    </div>
+    <a class="top-bar-button" href="#inquiry">FREE ESTIMATE</a>
+  </header>
+
+  <!-- Green Line -->
+  <nav class="company-name">
+    <div class="brandname">MVCON Builders & Development Corp.</div>
+  </nav>
+
+  <!-- Content Area -->
+  <main class="page">
+
+    <!-- ============== HOME ============== -->
+
+    <section class="section" data-page="home">
+      <div class="home-card">
+        <div class="home-overlay" aria-hidden="true"></div>
+        <img src="HomeBanner.jpg" alt="Home Banner" class="Showcase home-showcase">
+        <div class="home-title">Your DREAM, Your HOME, Our COMMITMENT</div>
+        <div class="home-actions">
+          <a class="InquireButton" href="#inquiry">INQUIRE NOW</a>
+          <a class="InquireButton" href="#about" id="servicesLink">SERVICES</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-page="home">
+      <div class="grid-4 grid-gap">
+        <div class="service-card" data-name="Bahay Ni Jayoo">
+          <img src="Service1.jpg" alt="Service 1" class="Showcase">
+          <div class="service-card-caption">Bahay Ni Jayoo</div>
+          <div class="service-card-details">This project is made for Jayoo.</div>
+        </div>
+        <div class="service-card" data-name="Bahay Ni Rence">
+          <img src="Service2.jpg" alt="Service 2" class="Showcase">
+          <div class="service-card-caption">Staycation Ni Rence</div>
+          <div class="service-card-details">This staycation is Oximoso's residence.</div>
+        </div>
+        <div class="service-card" data-name="Bahay Ni Marie">
+          <img src="Service3.jpg" alt="Service 3" class="Showcase">
+          <div class="service-card-caption">Company Ni Marie</div>
+          <div class="service-card-details">This is Marie's building.</div>
+        </div>
+        <div class="service-card" data-name="Bahay Ni Aliyah">
+          <img src="Service4.jpg" alt="Service 4" class="Showcase">
+          <div class="service-card-caption">Bahay Ni Aliyah</div>
+          <div class="service-card-details">This house is made for Aliyah.</div>
+        </div>
+      </div>
+
+      <div class="testimony">
+        <img src="gab.jpg" alt="Client photo" class="testimony-photo">
+        <div class="testimony-body">
+          <p class="testimony-quote">"Working with MVCON was the best decision we made for our cafe. The team was
+            professional, on time, and delivered exactly what we envisioned."</p>
+          <div class="testimony-author">
+            <span class="testimony-name">John Gabriel</span>
+            <span class="testimony-role">Cafe Owner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="add-btn" type="button">Share your experience</button>
+      </div>
+    </section>
+
+    <!-- ============== NEWS BOARD ============== -->
+
+    <section class="section" data-page="home">
+      <div class="newsboard-panel">
+        <h2 class="newsboard-title uppercase">News Board</h2>
+        <p class="muted">Latest updates from MVCON</p>
+
+        <div class="newsboard" id="newsboard">
+          <div class="newsboard-slide is-active">
+            <img src="News1.jpg" alt="News update 1" class="Showcase">
+          </div>
+          <div class="newsboard-slide">
+            <img src="News2.jpg" alt="News update 2" class="Showcase">
+          </div>
+          <div class="newsboard-slide">
+            <video src="News3.mp4" muted playsinline></video>
+          </div>
+          <div class="newsboard-slide">
+            <img src="News4.jpg" alt="News update 3" class="Showcase">
+          </div>
+        </div>
+
+        <div class="newsboard-dots" id="newsboardDots"></div>
+      </div>
+    </section>
+
+    <!-- ============== ABOUT US ============== -->
+
+    <section class="section" data-page="about">
+      <h2 class="about-h">About Us</h2>
+      <p class="muted about-text">We align ourselves with enlightened management philosophy, regarding people as our
+        major assets
+        and working always at maintaining the communication and interpersonal relations. Our management team is caring
+        and future oriented and our planning and programming is organized yet highest possible level of flexible. Our
+        company's commitment to its ethos guarantees our consistently giving our best in any project we undertake
+        <br><br>
+        MVCON BUILDERS AND DEVELOPMENT CORPORATION was formed in 2001 with the objective of establishing a sustainable
+        and continually improving construction company which was able to provide predictable and equally constructions
+        to our clients while concurrently fostering lasting relationships with professionals, local councils, government
+        bodies, and suppliers.<br><br>
+        We are well equipped to undertake the most technical construction and to direct and manage the works from design
+        to turnover. Whether you require the construction only or you require a full design and construction package, we
+        can manage the process and delivery of the finish product.
+      </p>
+
+      <div class="stack-tiles">
+        <div class="info-tile">
+          <div class="tile-head">MISSION</div>
+          <div class="tile-sub">To excel in our field by building beautiful and structurally sound houses based on the
+            principles of good craftsmanship in construction, techniques, integrity, and customer satisfaction.</div>
+        </div>
+        <div class="info-tile">
+          <div class="tile-head">VISION</div>
+          <div class="tile-sub">Our vision starts with understanding the needs of our clients so that we can remain
+            responsive, relevant, and competitive in the construction field. This means being adaptive and flexible to
+            the changes related to the business and that we believe will benefit all involved in the operation of the
+            company. We want to be useful and helpful not only to the people that we provide our construction services
+            to but to the people that make up our company as well, this involves building quality resident houses so we
+            can thrive as a business.</div>
+        </div>
+      </div>
+
+      <div class="image-tile">
+        <img src="Picture.jpg" alt="Picture" class="Showcase">
+      </div>
+    </section>
+
+    <section class="section" data-page="about">
+      <div class="location-map">
+        <iframe class="Showcase"
+          src="https://www.google.com/maps?q=MVCON+Builders+and+Development+Corp.,+Bldg.2+Stall+12,+Pilar+Arcade,+Pilar,+2101+Bataan&output=embed"
+          style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="MVCON Builders and Development Corp. location">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Services / Manpower / Tools carousel -->
+    <section class="section" data-page="about" id="servicesSection">
+      <h2 class="block-title services-title uppercase">Professional Services Offered</h2>
+
+      <div class="services-carousel">
+        <div class="services-carousel-viewport" id="servicesViewport">
+
+          <button class="carousel-btn carousel-prev" id="servicesPrev" type="button" aria-label="Previous">&#10094;</button>
+
+          <div class="services-slide is-active">
+            <h3 class="service-category-title">Construction of Residential Houses</h3>
+            <div class="service-columns">
+              <div class="service-col">
+                <ul class="service-list">
+                  <li>Design and Construction: Technical Design & Operation</li>
+                </ul>
+                <ul class="service-list">
+                  <li>Structural Works:</li>
+                </ul>
+                <ul class="service-sublist">
+                  <li>Provision of column footing</li>
+                  <li>Provision of tie beam</li>
+                  <li>Re-bars of floor slabs</li>
+                  <li>Provision of roof beams</li>
+                  <li>CHB laying</li>
+                  <li>Plastering</li>
+                  <li>Provision of concrete moldings</li>
+                </ul>
+              </div>
+              <div class="service-col">
+                <ul class="service-sublist">
+                  <li>Fabrication and installation of steel trusses</li>
+                  <li>Installation of roofing</li>
+                </ul>
+                <ul class="service-list">
+                  <li>Finishing Works:</li>
+                </ul>
+                <ul class="service-sublist">
+                  <li>Electrical works</li>
+                  <li>Plumbing works</li>
+                  <li>Ceiling Works</li>
+                  <li>Painting works</li>
+                  <li>Sash works</li>
+                  <li>Tile works</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="services-slide">
+            <h3 class="service-category-title">Supply and Installation of Sliding Doors & Windows</h3>
+            <div class="service-columns">
+              <div class="service-col">
+                <ul class="service-sublist">
+                  <li>Aluminum Frames</li>
+                </ul>
+              </div>
+              <div class="service-col">
+                <ul class="service-sublist">
+                  <li>UPVC Frame</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="services-slide">
+            <h3 class="service-category-title">Fabrication and Installation of Grills</h3>
+            <div class="service-columns">
+              <div class="service-col">
+                <ul class="service-sublist">
+                  <li>Stair railing grills</li>
+                  <li>Terrace and balcony grills</li>
+                </ul>
+              </div>
+              <div class="service-col">
+                <ul class="service-sublist">
+                  <li>Security windows</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="services-slide">
+            <h3 class="service-category-title">Construction of Perimeter Fence</h3>
+            <div class="service-columns">
+              <div class="service-col">
+                <ul class="service-list">
+                  <li>Design and Construction</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="services-slide">
+            <h3 class="service-category-title">Site Development</h3>
+            <div class="service-columns">
+              <div class="service-col">
+                <ul class="service-list">
+                  <li>Site Cleaning Works:</li>
+                </ul>
+                <ul class="service-sublist">
+                  <li>Excavation of excess soil using backhoe</li>
+                </ul>
+              </div>
+              <div class="service-col">
+                <ul class="service-list">
+                  <li>Hauling Services:</li>
+                </ul>
+                <ul class="service-sublist">
+                  <li>Pull-out of debris and excess soil using mini dump truck</li>
+                  <li>Pull-out of debris and excess soil using six wheeler truck</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="services-slide">
+            <h3 class="service-category-title">List of Manpower</h3>
+            <div class="service-columns">
+              <ul class="service-sublist">
+                <li>Engineer</li>
+                <li>Architect</li>
+                <li>Interior Designer</li>
+                <li>Foreman</li>
+                <li>Lead man</li>
+                <li>Timekeeper</li>
+                <li>Carpenter</li>
+                <li>Mason</li>
+                <li>Steel Man</li>
+              </ul>
+              <ul class="service-sublist">
+                <li>Laborer</li>
+                <li>Electrician</li>
+                <li>Plumber</li>
+                <li>Welder</li>
+                <li>Painter</li>
+                <li>Ceiling Installer</li>
+                <li>Roofing Installer</li>
+                <li>Window Installer</li>
+                <li>Backhoe Operator</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="services-slide">
+            <h3 class="service-category-title">List of Tools and Equipment</h3>
+            <div class="service-columns">
+              <ul class="service-sublist">
+                <li>Electrical Tools — per electrician</li>
+                <li>Plumbing Tools — per plumber</li>
+                <li>Skilled Worker Tools — per skilled workers</li>
+                <li>Submersible pump — 2 units</li>
+                <li>Water pump (gas driven) — 2 units</li>
+                <li>Compactor (gas driven) — 3 units</li>
+                <li>Concrete Vibrator — 3 units</li>
+                <li>Jack Hammer (electric) — 2 units</li>
+              </ul>
+              <ul class="service-sublist">
+                <li>Jack hammer with compressor — 2 units</li>
+                <li>Welding machine (electric) — 5 units</li>
+                <li>Welding generator — 2 units</li>
+                <li>Concrete cutter — 2 units</li>
+                <li>Backhoe — 2 units</li>
+                <li>Mini dump truck — 2 units</li>
+                <li>Six wheeler truck — 2 units</li>
+              </ul>
+            </div>
+          </div>
+
+          <button class="carousel-btn carousel-next" id="servicesNext" type="button" aria-label="Next">&#10095;</button>
+
+        </div>
+      </div>
+
+      <div class="services-dots" id="servicesDots"></div>
+    </section>
+
+    <!-- ============== PROJECTS ============== -->
+
+    <section class="section" data-page="projects">
+      <h2 class="block-title">Our Completed Projects</h2>
+      <p class="muted small">— Portfolio</p>
+    </section>
+
+    <section class="section" data-page="projects">
+      <div class="grid-3 grid-gap">
+        <div class="card-tile">
+          <div class="tile-img"><img src="Project1.jpg" alt="Project 1" class="Showcase"></div>
+          <div class="meta-title">Bahay Ni Jayoo</div>
+        </div>
+        <div class="card-tile">
+          <div class="tile-img"><img src="Project2.jpg" alt="Project 2" class="Showcase"></div>
+          <div class="meta-title">Bahay Ni Rence</div>
+        </div>
+        <div class="card-tile">
+          <div class="tile-img"><img src="Project3.jpg" alt="Project 3" class="Showcase"></div>
+          <div class="meta-title">Bahay Ni Marie</div>
+        </div>
+        <div class="card-tile">
+          <div class="tile-img"><img src="Project4.jpg" alt="Project 4" class="Showcase"></div>
+          <div class="meta-title">Bahay Ni Aliyah</div>
+        </div>
+        <div class="card-tile">
+          <div class="tile-img"><img src="Project5.jpg" alt="Project 5" class="Showcase"></div>
+          <div class="meta-title">Bahay Ni Heeseung</div>
+        </div>
+        <div class="card-tile">
+          <div class="tile-img"><img src="Project6.jpg" alt="Project 6" class="Showcase"></div>
+          <div class="meta-title">Bahay Ni Jake</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-page="projects">
+      <br>
+      <br>
+      <h2 class="block-title">Portfolio</h2>
+      <div class="grid-4 grid-gap">
+        <div class="portfolio-tile">
+          <div class="tile-img"><img src="Portfolio1.jpg" alt="Portfolio 1" class="Showcase"></div>
+          <div class="tile-caption"></div>
+        </div>
+        <div class="portfolio-tile">
+          <div class="tile-img"><img src="Portfolio2.jpg" alt="Portfolio 2" class="Showcase"></div>
+          <div class="tile-caption"></div>
+        </div>
+        <div class="portfolio-tile">
+          <div class="tile-img"><img src="Portfolio3.jpg" alt="Portfolio 3" class="Showcase"></div>
+          <div class="tile-caption"></div>
+        </div>
+        <div class="portfolio-tile">
+          <div class="tile-img"><img src="Portfolio4.jpg" alt="Portfolio 4" class="Showcase"></div>
+          <div class="tile-caption"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== INQUIRY / FREE ESTIMATE ============== -->
+
+    <section class="section enquire-page" data-page="inquiry">
+      <div class="panel panel-white">
+        <h2 class="panel-title-dark uppercase">Inquire now</h2>
+        <p class="muted">Please fill up the form to get a free estimate of your project.</p>
+
+        <div class="form-fields">
+          <div class="form-field">
+            <label class="field-label">Full Name*</label>
+            <div class="text-input">Input Full Name</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Email</label>
+            <div class="text-input">Input Email Address</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Phone Number*</label>
+            <div class="text-input">Input Phone Number</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Best Time to Call</label>
+            <div class="text-input">Input Preferred Time</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Property Location*</label>
+            <div class="text-input">Input Property Location</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Design Status</label>
+            <div class="text-input">With design or none yet</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Classification</label>
+            <div class="text-input">Residential / Zen / etc.</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">No. of Storey</label>
+            <div class="text-input">Input Number of Storeys</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">No. of Rooms</label>
+            <div class="text-input">Input Number of Rooms</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">No. of Toilet & Bath</label>
+            <div class="text-input">Input Number of Toilet & Bath</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">No. of Garage</label>
+            <div class="text-input">Input Number of Garage</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Lot Area (sqm)</label>
+            <div class="text-input">Input Lot Area</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Target Floor Area (sqm)</label>
+            <div class="text-input">Input Target Floor Area</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Budget Range</label>
+            <div class="text-input">Input Budget Range</div>
+          </div>
+          <div class="form-field">
+            <label class="field-label">Lot Title with Bearing</label>
+            <input type="file" class="file-input" accept="image/*">
+          </div>
+        </div>
+
+        <button class="btn btn-blue" type="button">Send</button>
+      </div>
+    </section>
+
+    <!-- ============== CONTACTS ============== -->
+
+    <section class="section contacts-page" data-page="contacts">
+      <h2 class="contact-heading uppercase">Contact Details</h2>
+
+      <div class="contact-columns">
+        <div class="panel contact-panel-left">
+          <ul class="strip-list contact-list">
+            <li>
+              <svg class="contact-icon-dark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z" />
+              </svg>
+              <span>MVCON Builders & Development Corp.</span>
+            </li>
+            <li>
+              <svg class="contact-icon-dark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M2 4h20v16H2V4Zm2 2v.01L12 12l8-5.99V6H4Zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24Z" />
+              </svg>
+              <span>mvconbuilders@gmail.com</span>
+            </li>
+            <li>
+              <svg class="contact-icon-dark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z" />
+              </svg>
+              <span>0922-760-3328 / 0921-393-8525</span>
+            </li>
+            <li>
+              <svg class="contact-icon-dark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" />
+              </svg>
+              <span>BLDG. STALL 12 PILAR ARCADE, PANILAO, BATAAN</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel contact-panel-right">
+          <h3 class="contact-visit-heading">Planning to visit us!</h3>
+          <div class="map-placeholder">
+            <iframe class="Showcase"
+              src="https://www.google.com/maps?q=MVCON+Builders+and+Development+Corp.,+Bldg.2+Stall+12,+Pilar+Arcade,+Pilar,+2101+Bataan&output=embed"
+              style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="MVCON Builders and Development Corp. location">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="foot-left">
+      <div class="mini-logo" aria-hidden="true">
+        <img src="logo.png" alt="M" style="width:100%;height:100%;border-radius:4px;">
+      </div>
+      <div class="foot-tagline">Your DREAM, Your HOME, Our COMMITMENT</div>
+    </div>
+    <div class="foot-right">
+      <div class="foot-title">Contact Details:</div>
+      <ul class="strip-list">
+        <li>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z" />
+          </svg>
+          <span>MVCON Builders & Development Corp</span>
+        </li>
+        <li>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M2 4h20v16H2V4Zm2 2v.01L12 12l8-5.99V6H4Zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24Z" />
+          </svg>
+          <span>mvconbuilders@gmail.com</span>
+        </li>
+        <li>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z" />
+          </svg>
+          <span>0922-760-3328 / 0921-393-8525</span>
+        </li>
+        <li>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" />
+          </svg>
+          <span>BLDG. STALL 12 PILAR ARCADE, PANILAO, BATAAN</span>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const inner = document.getElementById('navInner');
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+    const siteFooter = document.getElementById('siteFooter');
+
+    const sections = Array.from(document.querySelectorAll('main.page > section[data-page]'));
+    const pageIds = Array.from(new Set(sections.map(s => s.dataset.page)));
+
+    toggle.addEventListener('click', () => {
+      const isOpen = inner.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    function showPage(id, opts = {}) {
+      const target = pageIds.includes(id) ? id : pageIds[0];
+
+      sections.forEach(section => {
+        section.classList.toggle('is-active', section.dataset.page === target);
+      });
+
+      navLinks.forEach(link => {
+        const linkId = link.getAttribute('href').replace('#', '');
+        link.classList.toggle('is-active', linkId === target);
+      });
+
+      if (siteFooter) {
+        siteFooter.style.display = target === 'contacts' ? 'none' : '';
+      }
+
+      inner.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+
+      if (!opts.skipScroll) {
+        window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+      }
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = link.getAttribute('href').replace('#', '');
+        if (location.hash !== '#' + id) {
+          history.pushState(null, '', '#' + id);
+        }
+        showPage(id);
+      });
+    });
+
+    window.addEventListener('popstate', () => {
+      showPage(location.hash.replace('#', ''));
+    });
+
+    showPage(location.hash.replace('#', ''), { skipScroll: true });
+
+    // Services button on Home: jump to About Us page then scroll to the services content
+    const servicesLink = document.getElementById('servicesLink');
+    if (servicesLink) {
+      servicesLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (location.hash !== '#about') {
+          history.pushState(null, '', '#about');
+        }
+        showPage('about');
+        setTimeout(() => {
+          const target = document.getElementById('servicesSection');
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+      });
+    }
+
+    // Home service cards: click to reveal project name / details
+    Array.from(document.querySelectorAll('.service-card')).forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('is-open');
+      });
+    });
+
+    // ---------------- News Board Slideshow (auto-advance) ----------------
+    (function () {
+      const board = document.getElementById('newsboard');
+      if (!board) return;
+
+      const slides = Array.from(board.querySelectorAll('.newsboard-slide'));
+      const dotsWrap = document.getElementById('newsboardDots');
+      let current = 0;
+      let timer = null;
+
+      slides.forEach((slide, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'newsboard-dot' + (i === 0 ? ' is-active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+      const dots = Array.from(dotsWrap.querySelectorAll('.newsboard-dot'));
+
+      function stopCurrentVideo() {
+        const video = slides[current].querySelector('video');
+        if (video) {
+          video.pause();
+          video.onended = null;
+        }
+      }
+
+      function goTo(index) {
+        clearTimeout(timer);
+        stopCurrentVideo();
+
+        current = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+        dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
+
+        playCurrent();
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+
+      function playCurrent() {
+        const active = slides[current];
+        const video = active.querySelector('video');
+
+        if (video) {
+          video.currentTime = 0;
+          video.onended = next;
+          video.play().catch(() => {
+            timer = setTimeout(next, 5000);
+          });
+        } else {
+          timer = setTimeout(next, 5000);
+        }
+      }
+
+      playCurrent();
+    })();
+
+    // ---------------- Services Carousel (manual: buttons + swipe, no autoplay) ----------------
+    (function () {
+      const viewport = document.getElementById('servicesViewport');
+      if (!viewport) return;
+
+      const slides = Array.from(viewport.querySelectorAll('.services-slide'));
+      const dotsWrap = document.getElementById('servicesDots');
+      const prevBtn = document.getElementById('servicesPrev');
+      const nextBtn = document.getElementById('servicesNext');
+      let current = 0;
+
+      slides.forEach((slide, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'services-dot' + (i === 0 ? ' is-active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+      const dots = Array.from(dotsWrap.querySelectorAll('.services-dot'));
+
+      function goTo(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+        dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
+        viewport.scrollTop = 0;
+      }
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      // Swipe support (touch devices)
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      viewport.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      viewport.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < 0) {
+            goTo(current + 1);
+          } else {
+            goTo(current - 1);
+          }
+        }
+      }, { passive: true });
+    })();
+  </script>
+</body>
+
+</html>
