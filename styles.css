@@ -974,20 +974,19 @@ img, video {
 
 /* ---------------- House-photo background (shared: Contacts + Free Estimate) ---------------- */
 .contacts-page,
-.enquire-page {
+.panel {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   padding: 24px;
 }
 
-/* Contacts background made taller as requested */
 .contacts-page {
   min-height: clamp(560px, 70vw, 760px);
 }
 
 .contacts-page::before,
-.enquire-page::before {
+.panel::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -999,7 +998,7 @@ img, video {
 }
 
 .contacts-page > *,
-.enquire-page > * {
+.panel > * {
   position: relative;
   z-index: 1;
 }
