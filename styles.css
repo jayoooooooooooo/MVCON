@@ -619,7 +619,7 @@ img, video {
 
 .image-tile {
   margin-top: 16px;
-  height: clamp(200px, 34vw, 320px);
+  height: clamp(300px, 34vw, 820px);
   background: var(--bg-tile);
   border-radius: 8px;
   overflow: hidden;
@@ -929,7 +929,7 @@ img, video {
 
 .map-placeholder {
   height: clamp(180px, 32vw, 260px);
-  background: var(--bg-map);
+  background: var(--blue);
   border-radius: 8px;
   position: relative;
   overflow: hidden;
@@ -941,9 +941,9 @@ img, video {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 25% 30%, rgba(58, 139, 63, 0.35) 0 8px, transparent 9px),
-    radial-gradient(circle at 60% 60%, rgba(58, 139, 63, 0.35) 0 8px, transparent 9px),
-    linear-gradient(135deg, rgba(58, 139, 63, 0.10), transparent 55%);
+    radial-gradient(circle at 25% 30%, rgba(255, 255, 255, 0.12) 0 8px, transparent 9px),
+    radial-gradient(circle at 60% 60%, rgba(255, 255, 255, 0.12) 0 8px, transparent 9px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 55%);
   opacity: 0.7;
 }
 
@@ -1038,7 +1038,8 @@ img, video {
 
 .contact-panel-left,
 .contact-panel-right {
-  background: var(--card);
+  background: var(--blue);
+  opacity: 0.95;
   box-shadow: 0 12px 28px -18px rgba(15, 23, 42, 0.35);
   display: flex;
   flex-direction: column;
@@ -1048,25 +1049,36 @@ img, video {
   margin: 0 0 16px;
   font-size: clamp(18px, 3vw, 22px);
   font-weight: 800;
-  color: var(--text-heading);
+  color: var(--text-light);
 }
 
 .contact-list {
-  color: var(--text);
+  color: var(--text-light);
   font-size: 14px;
   font-weight: 700;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  line-height: 1.6;
   margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 12px;
+  align-content: space-evenly;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .contact-icon-dark {
   width: 20px;
   height: 20px;
   flex: none;
-  color: var(--blue);
+  color: #000000;
 }
 
 /* ---------------- Buttons ---------------- */
